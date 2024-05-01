@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using LeaveManagementSystem.Application.Features.Queries.GetAllLeaveTypes;
+using LeaveManagementSystem.Application.Features.Queries.GetLeaveTypeDetails;
 using LeaveManagementSytem.Domian;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace LeaveManagementSystem.Application.MappingConfig
         public LeavetypeProfile()
         {
             CreateMap<LeavetypeDto, Leavetype>().ReverseMap();
+            CreateMap<LeaveTypeDetailsDto, Leavetype>().ReverseMap();
         }
     }
 }
