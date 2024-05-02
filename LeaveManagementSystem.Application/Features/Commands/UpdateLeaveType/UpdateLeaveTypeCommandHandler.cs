@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using LeaveManagementSystem.Application.Contracts.Persistance;
+using LeaveManagementSystem.Application.Exceptions;
+using LeaveManagementSystem.Application.Features.Commands.CreeateLeaveType;
 using LeaveManagementSytem.Domian;
 using MediatR;
 using System;
@@ -23,6 +26,11 @@ namespace LeaveManagementSystem.Application.Features.Commands.UpdateLeaveType
         public async Task<Unit> Handle(UpdateLeaveTypeCommand request, CancellationToken cancellationToken)
         {
             //Validate incoming data
+            var validator = new UpdateLeaveTypeCommandValidator(_leavetypecRepository);
+            var validationResult = await validator.ValidateAsync(request, cancellationToken);
+
+            if (!validationResult.IsValid)
+                throw new BadRequestException("Invalid Leave type", validationResult);
 
             //Convert to domain entity object
             var leavetypeToUpdate = _mapper.Map<Leavetype>(request);

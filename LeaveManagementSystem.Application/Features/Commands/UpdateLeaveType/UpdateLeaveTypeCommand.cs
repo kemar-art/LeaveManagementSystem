@@ -9,7 +9,7 @@ namespace LeaveManagementSystem.Application.Features.Commands.UpdateLeaveType
 {
     public class UpdateLeaveTypeCommand : IRequest<Unit>
     {
-        public string Nmae { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
         public int DefaultDays { get; set; }
     }
 }

@@ -10,6 +10,6 @@ namespace LeaveManagementSystem.Application.Features.Commands.CreeateLeaveType
     public class CreeateLeaveTypeCommand : IRequest<int>
     {
         public string Name { get; set; } = string.Empty;
-        public int defaultDays { get; set; }
+        public int DefaultDays { get; set; }
     }
 }
