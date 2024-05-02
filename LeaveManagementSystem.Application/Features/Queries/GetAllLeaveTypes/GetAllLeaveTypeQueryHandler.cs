@@ -12,9 +12,9 @@ namespace LeaveManagementSystem.Application.Features.Queries.GetAllLeaveTypes
     public class GetAllLeaveTypeQueryHandler : IRequestHandler<GetAllLeaveTypeQuery, IEnumerable<LeavetypeDto>>
     {
         private readonly IMapper _mapper;
-        private readonly ILeavetypecRepository _leavetypecRepository;
+        private readonly ILeaveTypecRepository _leavetypecRepository;
 
-        public GetAllLeaveTypeQueryHandler(IMapper mapper, ILeavetypecRepository leavetypecRepository)
+        public GetAllLeaveTypeQueryHandler(IMapper mapper, ILeaveTypecRepository leavetypecRepository)
         {
             _mapper = mapper;
             _leavetypecRepository = leavetypecRepository;

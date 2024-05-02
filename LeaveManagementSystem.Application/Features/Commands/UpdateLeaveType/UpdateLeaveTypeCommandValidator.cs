@@ -10,9 +10,9 @@ namespace LeaveManagementSystem.Application.Features.Commands.UpdateLeaveType
 {
     public class UpdateLeaveTypeCommandValidator : AbstractValidator<UpdateLeaveTypeCommand>
     {
-        private readonly ILeavetypecRepository _leavetypecRepository;
+        private readonly ILeaveTypecRepository _leavetypecRepository;
 
-        public UpdateLeaveTypeCommandValidator(ILeavetypecRepository leavetypecRepository) 
+        public UpdateLeaveTypeCommandValidator(ILeaveTypecRepository leavetypecRepository) 
         {
             RuleFor(p => p.Name)
             .NotEmpty().WithMessage("{PropertyName} is required")

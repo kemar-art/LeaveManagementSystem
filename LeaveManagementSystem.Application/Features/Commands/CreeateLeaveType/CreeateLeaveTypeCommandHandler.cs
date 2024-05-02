@@ -14,9 +14,9 @@ namespace LeaveManagementSystem.Application.Features.Commands.CreeateLeaveType
     public class CreeateLeaveTypeCommandHandler : IRequestHandler<CreeateLeaveTypeCommand, int>
     {
         private readonly IMapper _mapper;
-        private readonly ILeavetypecRepository _leavetypecRepository;
+        private readonly ILeaveTypecRepository _leavetypecRepository;
 
-        public CreeateLeaveTypeCommandHandler(IMapper mapper, ILeavetypecRepository leavetypecRepository)
+        public CreeateLeaveTypeCommandHandler(IMapper mapper, ILeaveTypecRepository leavetypecRepository)
         {
             _mapper = mapper;
             _leavetypecRepository = leavetypecRepository;
