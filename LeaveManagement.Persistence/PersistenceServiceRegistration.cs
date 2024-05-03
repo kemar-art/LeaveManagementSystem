@@ -17,8 +17,8 @@ namespace LeaveManagement.Persistence
             });
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            services.AddScoped<ILeaveTypecRepository, LeaveTypeRepository>();
-            services.AddScoped<ILeaverequestRepository, LeaverequestRepository>();
+            services.AddScoped<ILeaveTypeRepository, LeaveTypeRepository>();
+            services.AddScoped<ILeaveRequestRepository, LeaveRequestRepository>();
             services.AddScoped<ILeaveAllocationRepository, LeaveAllocationRepository>();
 
             return services;

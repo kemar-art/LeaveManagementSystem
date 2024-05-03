@@ -15,9 +15,9 @@ namespace LeaveManagementSystem.Application.Features.Queries.GetLeaveTypeDetails
     public class GetLeaveTypeDetailsQueryHandler : IRequestHandler<GetLeaveTypeDetailsQuery, LeaveTypeDetailsDto>
     {
         private readonly IMapper _mapper;
-        private readonly ILeaveTypecRepository _leavetypecRepository;
+        private readonly ILeaveTypeRepository _leavetypecRepository;
 
-        public GetLeaveTypeDetailsQueryHandler(IMapper mapper, ILeaveTypecRepository leavetypecRepository)
+        public GetLeaveTypeDetailsQueryHandler(IMapper mapper, ILeaveTypeRepository leavetypecRepository)
         {
             _mapper = mapper;
             _leavetypecRepository = leavetypecRepository;

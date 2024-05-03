@@ -13,9 +13,9 @@ namespace LeaveManagementSystem.Application.Features.Commands.DeleteLeaveType
 {
     public class DeleteLeaveTypeCommandHandler : IRequestHandler<DeleteLeaveTypeCommand ,Unit>
     {
-        private readonly ILeaveTypecRepository _leavetypecRepository;
+        private readonly ILeaveTypeRepository _leavetypecRepository;
 
-        public DeleteLeaveTypeCommandHandler(ILeaveTypecRepository leavetypecRepository) 
+        public DeleteLeaveTypeCommandHandler(ILeaveTypeRepository leavetypecRepository) 
         {
             _leavetypecRepository = leavetypecRepository;
         }

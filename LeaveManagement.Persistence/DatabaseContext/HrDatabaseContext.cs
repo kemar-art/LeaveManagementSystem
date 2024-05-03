@@ -18,7 +18,7 @@ namespace LeaveManagement.Persistence.DatabaseContext
 
         public DbSet<Leavetype> Leavetypes{ get; set; }
         public DbSet<LeaveAllocation> LeaveAllocations{ get; set; }
-        public DbSet<Leaverequest> Leaverequests{ get; set; }
+        public DbSet<LeaveRequest> LeaveRequests{ get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

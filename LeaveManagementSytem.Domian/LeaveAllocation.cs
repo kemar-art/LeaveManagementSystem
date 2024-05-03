@@ -10,5 +10,6 @@ namespace LeaveManagementSytem.Domian
         public int LeavetypeId { get; set; }
 
         public int Period { get; set; }
+        public string EmployeeId { get; set; } = string.Empty;
     }
 }
