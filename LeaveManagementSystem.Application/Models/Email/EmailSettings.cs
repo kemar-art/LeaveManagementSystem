@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeaveManagementSystem.Application.Models.Email
 {
-    public class EmaillSettings
+    public class EmailSettings
     {
         public string ApiKey { get; set; } = string.Empty;
         public string FromAddress { get; set; } = string.Empty;

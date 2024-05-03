@@ -14,9 +14,13 @@ namespace LeaveManagementSystem.Application.Features.Commands.UpdateLeaveType
 
         public UpdateLeaveTypeCommandValidator(ILeaveTypeRepository leavetypecRepository) 
         {
+            RuleFor(p => p.Id)
+                .NotEmpty()
+                .MustAsync(LeaveTypeMustExist);
+
             RuleFor(p => p.Name)
-            .NotEmpty().WithMessage("{PropertyName} is required")
-            .NotNull();
+                .NotEmpty().WithMessage("{PropertyName} is required")
+                .NotNull();
 
             RuleFor(p => p.DefaultDays)
                 .GreaterThan(100).WithMessage("{PropertyName} cannot exceed 100")
@@ -28,6 +32,12 @@ namespace LeaveManagementSystem.Application.Features.Commands.UpdateLeaveType
 
             _leavetypecRepository = leavetypecRepository;
 
+        }
+
+        private async Task<bool> LeaveTypeMustExist(int id, CancellationToken token)
+        {
+            var leaveType = await _leavetypecRepository.GetByIdAsync(id);
+            return leaveType is null && token.IsCancellationRequested;
         }
 
         private async Task<bool> LeaveTypeNameUnique(UpdateLeaveTypeCommand command, CancellationToken token)
