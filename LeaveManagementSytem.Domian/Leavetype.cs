@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LeaveManagementSytem.Domian
 {
-    public class Leavetype : BaseEntity
+    public class LeaveType : BaseEntity
     {
         public string Name { get; set; } = string.Empty;
         public int DefaultDays { get; set; }

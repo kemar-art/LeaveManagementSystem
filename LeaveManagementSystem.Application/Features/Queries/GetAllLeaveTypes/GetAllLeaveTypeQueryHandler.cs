@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace LeaveManagementSystem.Application.Features.Queries.GetAllLeaveTypes
 {
-    public class GetAllLeaveTypeQueryHandler : IRequestHandler<GetAllLeaveTypeQuery, IEnumerable<LeavetypeDto>>
+    public class GetAllLeaveTypeQueryHandler : IRequestHandler<GetAllLeaveTypeQuery, IEnumerable<LeaveTypeDto>>
     {
         private readonly IMapper _mapper;
         private readonly ILeaveTypeRepository _leavetypecRepository;
@@ -26,13 +26,13 @@ namespace LeaveManagementSystem.Application.Features.Queries.GetAllLeaveTypes
 
 
 
-        public async Task<IEnumerable<LeavetypeDto>> Handle(GetAllLeaveTypeQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<LeaveTypeDto>> Handle(GetAllLeaveTypeQuery request, CancellationToken cancellationToken)
         {
             //Query the database
             var leaveTypes = await _leavetypecRepository.GetAllAsync();
 
             // Covert data objects to DTO objects
-            var data = _mapper.Map< IEnumerable<LeavetypeDto>>(leaveTypes);
+            var data = _mapper.Map< IEnumerable<LeaveTypeDto>>(leaveTypes);
 
             // retrun the list of DTO objects.
             _appLogger.LogInformation("Leave types were retrieved successfully");

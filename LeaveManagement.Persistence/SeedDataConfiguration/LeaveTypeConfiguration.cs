@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace LeaveManagement.Persistence.SeedDataConfiguration
 {
-    public class LeaveTypeConfiguration : IEntityTypeConfiguration<Leavetype>
+    public class LeaveTypeConfiguration : IEntityTypeConfiguration<LeaveType>
     {
-        public void Configure(EntityTypeBuilder<Leavetype> builder)
+        public void Configure(EntityTypeBuilder<LeaveType> builder)
         {
             builder.HasData(
-                new Leavetype
+                new LeaveType
                 {
                     Id = 1,
                     Name = "Vacation",

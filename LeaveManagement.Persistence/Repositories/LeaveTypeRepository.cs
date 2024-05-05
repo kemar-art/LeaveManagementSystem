@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LeaveManagement.Persistence.Repositories
 {
-    public class LeaveTypeRepository : GenericRepository<Leavetype>, ILeaveTypeRepository
+    public class LeaveTypeRepository : GenericRepository<LeaveType>, ILeaveTypeRepository
     {
         public LeaveTypeRepository(HrDatabaseContext dbcontext) : base(dbcontext)
         {
@@ -13,7 +13,7 @@ namespace LeaveManagement.Persistence.Repositories
 
         public async Task<bool> IsLeaveTypeUnique(string name)
         {
-            return await _dbcontext.Leavetypes.AnyAsync(e => e.Name == name);
+            return await _dbcontext.Leavetypes.AnyAsync(e => e.Name == name) == false;
         }
     }
 }

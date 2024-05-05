@@ -8,7 +8,7 @@ namespace LeaveManagementSytem.Domian
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
-        public Leavetype? Leavetype { get; set; }
+        public LeaveType? Leavetype { get; set; }
         public int LeavetypeId { get; set; }
 
         public DateTime DateRequested { get; set; }

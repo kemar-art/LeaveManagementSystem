@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+﻿ using FluentValidation;
 using LeaveManagementSystem.Application.Contracts.Persistance;
 using System;
 using System.Collections.Generic;
@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace LeaveManagementSystem.Application.Features.Commands.CreeateLeaveType
 {
-    public class CreeateLeaveTypeCommandValidator : AbstractValidator<CreeateLeaveTypeCommand>
+    public class CreateLeaveTypeCommandValidator : AbstractValidator<CreateLeaveTypeCommand>
     {
         private readonly ILeaveTypeRepository _leavetypecRepository;
 
-        public CreeateLeaveTypeCommandValidator(ILeaveTypeRepository leavetypecRepository)
+        public CreateLeaveTypeCommandValidator(ILeaveTypeRepository leavetypecRepository)
         {
             RuleFor(p => p.Name)
                 .NotEmpty().WithMessage("{PropertyName} is required")
@@ -29,7 +29,7 @@ namespace LeaveManagementSystem.Application.Features.Commands.CreeateLeaveType
             _leavetypecRepository = leavetypecRepository;
         }
 
-        private async Task<bool> LeaveTypeNameUnique(CreeateLeaveTypeCommand command, CancellationToken token)
+        private async Task<bool> LeaveTypeNameUnique(CreateLeaveTypeCommand command, CancellationToken token)
         {
             return await _leavetypecRepository.IsLeaveTypeUnique(command.Name);
         }

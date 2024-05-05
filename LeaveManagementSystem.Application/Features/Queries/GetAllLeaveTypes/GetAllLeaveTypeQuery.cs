@@ -10,5 +10,5 @@ namespace LeaveManagementSystem.Application.Features.Queries.GetAllLeaveTypes
     //public class GetAllLeaveTypeQuery : IRequest<IEnumerable<LeavetypeDto>>
     //{
     //}
-    public record GetAllLeaveTypeQuery : IRequest<IEnumerable<LeavetypeDto>>;
+    public record GetAllLeaveTypeQuery : IRequest<IEnumerable<LeaveTypeDto>>;
 }

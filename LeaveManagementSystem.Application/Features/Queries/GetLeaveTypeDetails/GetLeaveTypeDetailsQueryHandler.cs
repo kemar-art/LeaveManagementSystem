@@ -30,7 +30,7 @@ namespace LeaveManagementSystem.Application.Features.Queries.GetLeaveTypeDetails
 
             //Verify if the record exists
             if (leaveType == null)
-                    throw new NotFoundException(nameof(Leavetype), request.Id);
+                    throw new NotFoundException(nameof(LeaveType), request.Id);
 
             // Covert data objects to DTO objects
             var data = _mapper.Map<LeaveTypeDetailsDto>(leaveType);

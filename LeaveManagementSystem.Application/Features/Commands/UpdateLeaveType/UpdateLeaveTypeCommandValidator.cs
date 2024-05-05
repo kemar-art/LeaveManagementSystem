@@ -10,7 +10,7 @@ namespace LeaveManagementSystem.Application.Features.Commands.UpdateLeaveType
 {
     public class UpdateLeaveTypeCommandValidator : AbstractValidator<UpdateLeaveTypeCommand>
     {
-        private readonly ILeaveTypeRepository _leavetypecRepository;
+        private readonly ILeaveTypeRepository _leaveTypecRepository;
 
         public UpdateLeaveTypeCommandValidator(ILeaveTypeRepository leavetypecRepository) 
         {
@@ -23,26 +23,27 @@ namespace LeaveManagementSystem.Application.Features.Commands.UpdateLeaveType
                 .NotNull();
 
             RuleFor(p => p.DefaultDays)
-                .GreaterThan(100).WithMessage("{PropertyName} cannot exceed 100")
-                .LessThan(1).WithMessage("{PropertyName} cannot be less than 1");
+                .LessThan(100).WithMessage("{PropertyName} cannot exceed 100")
+                .GreaterThan(1).WithMessage("{PropertyName} cannot be less than 1");
+
 
             RuleFor(q => q)
                 .MustAsync(LeaveTypeNameUnique)
                 .WithMessage("Leave type already exists");
 
-            _leavetypecRepository = leavetypecRepository;
+            _leaveTypecRepository = leavetypecRepository;
 
         }
 
         private async Task<bool> LeaveTypeMustExist(int id, CancellationToken token)
         {
-            var leaveType = await _leavetypecRepository.GetByIdAsync(id);
-            return leaveType is null && token.IsCancellationRequested;
+            var leaveType = await _leaveTypecRepository.GetByIdAsync(id);
+            return leaveType != null;
         }
 
         private async Task<bool> LeaveTypeNameUnique(UpdateLeaveTypeCommand command, CancellationToken token)
         {
-            return await _leavetypecRepository.IsLeaveTypeUnique(command.Name);
+            return await _leaveTypecRepository.IsLeaveTypeUnique(command.Name);
         }
     }
 }

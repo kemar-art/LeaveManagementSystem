@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace LeaveManagementSystem.Application.Features.Commands.UpdateLeaveType
 {
-    public class UpdateLeaveTypeCommandHandler : IRequestHandler<UpdateLeaveTypeCommand, Unit>
+    public class UpdateLeaveTypeCommandHandler : IRequestHandler<UpdateLeaveTypeCommand, LeaveType>
     {
         private readonly IMapper _mapper;
         private readonly ILeaveTypeRepository _leavetypecRepository;
@@ -26,25 +26,25 @@ namespace LeaveManagementSystem.Application.Features.Commands.UpdateLeaveType
             _leavetypecRepository = leavetypecRepository;
             _appLogger = appLogger;
         }
-        public async Task<Unit> Handle(UpdateLeaveTypeCommand request, CancellationToken cancellationToken)
+        public async Task<LeaveType> Handle(UpdateLeaveTypeCommand request, CancellationToken cancellationToken)
         {
             //Validate incoming data
             var validator = new UpdateLeaveTypeCommandValidator(_leavetypecRepository);
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
 
-            if (!validationResult.IsValid)
+            if (validationResult.Errors.Any())
             {
-                _appLogger.LogWarning("Validate errors in update request for {0} - {1}", typeof(Leavetype), request.Id);
+                _appLogger.LogWarning("Validate errors in update request for {0} - {1}", typeof(LeaveType), request.Id);
                 throw new BadRequestException("Invalid Leave type", validationResult);
             }
             //Convert to domain entity object
-            var leavetypeToUpdate = _mapper.Map<Leavetype>(request);
+            var leavetypeToUpdate = _mapper.Map<LeaveType>(request);
 
             //add to database
             await _leavetypecRepository.UpdateAsync(leavetypeToUpdate);
 
             //Return record Id
-            return Unit.Value;
+            return leavetypeToUpdate;
         }
     }
 }

@@ -27,7 +27,7 @@ namespace LeaveManagementSystem.Application.Features.Commands.DeleteLeaveType
 
             //Verifiy if the record exists
             if (leavetypeTodelete == null)
-                throw new NotFoundException(nameof(Leavetype), request.Id);
+                throw new NotFoundException(nameof(LeaveType), request.Id);
 
             //Remove from database
             await _leavetypecRepository.DeleteAsync(leavetypeTodelete);
