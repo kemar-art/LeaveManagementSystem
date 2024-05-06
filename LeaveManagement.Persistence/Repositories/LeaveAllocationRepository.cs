@@ -22,21 +22,21 @@ namespace LeaveManagement.Persistence.Repositories
             return await _dbcontext.LeaveAllocations.AnyAsync(q => q.EmployeeId == userId && q.LeavetypeId == leaveTypeId && q.Period == period);
         }
 
-        public async Task<LeaveRequest> GetLeaveRequestWithDetails(int id)
+        public async Task<LeaveRequest> GetLeaveAllocationWithDetailsById(int id)
         {
             var leaveRequest = await _dbcontext.LeaveRequests.Include(q => q.Leavetype)
                                                        .FirstOrDefaultAsync(q => q.Id == id);
             return leaveRequest;
         }
 
-        public async Task<List<LeaveRequest>> GetAllocationWithDetails()
+        public async Task<List<LeaveRequest>> GetAllocationListWithDetails()
         {
             var leaveRequest = await _dbcontext.LeaveRequests.Include(q => q.Leavetype)
                                                              .ToListAsync();
             return leaveRequest;
         }
 
-        public async Task<List<LeaveRequest>> GetLeaveRequestWithDetails(string userId)
+        public async Task<List<LeaveRequest>> GetAllocationListUserIdWithDetails(string userId)
         {
             var leaveRequest = await _dbcontext.LeaveRequests.Where(q => q.RequestingEployeeId == userId)
                                                              .Include(q => q.Leavetype)
