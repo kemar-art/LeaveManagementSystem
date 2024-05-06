@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeaveManagementSystem.Application.Features.Commands.DeleteLeaveType
+namespace LeaveManagementSystem.Application.Features.LeaveTypeFeatures.Commands.DeleteLeaveType
 {
     public class DeleteLeaveTypeCommand : IRequest<Unit>
     {

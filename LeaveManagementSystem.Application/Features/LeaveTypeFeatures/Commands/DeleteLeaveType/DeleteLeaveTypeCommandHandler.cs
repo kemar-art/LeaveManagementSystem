@@ -9,17 +9,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeaveManagementSystem.Application.Features.Commands.DeleteLeaveType
+namespace LeaveManagementSystem.Application.Features.LeaveTypeFeatures.Commands.DeleteLeaveType
 {
-    public class DeleteLeaveTypeCommandHandler : IRequestHandler<DeleteLeaveTypeCommand ,Unit>
+    public class DeleteLeaveTypeCommandHandler : IRequestHandler<DeleteLeaveTypeCommand, Unit>
     {
         private readonly ILeaveTypeRepository _leavetypecRepository;
 
-        public DeleteLeaveTypeCommandHandler(ILeaveTypeRepository leavetypecRepository) 
+        public DeleteLeaveTypeCommandHandler(ILeaveTypeRepository leavetypecRepository)
         {
             _leavetypecRepository = leavetypecRepository;
         }
-   
+
         public async Task<Unit> Handle(DeleteLeaveTypeCommand request, CancellationToken cancellationToken)
         {
             //Find domain entity object

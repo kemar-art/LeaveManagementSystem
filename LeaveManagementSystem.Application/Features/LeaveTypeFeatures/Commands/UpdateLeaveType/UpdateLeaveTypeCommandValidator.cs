@@ -6,13 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeaveManagementSystem.Application.Features.Commands.UpdateLeaveType
+namespace LeaveManagementSystem.Application.Features.LeaveTypeFeatures.Commands.UpdateLeaveType
 {
     public class UpdateLeaveTypeCommandValidator : AbstractValidator<UpdateLeaveTypeCommand>
     {
         private readonly ILeaveTypeRepository _leaveTypecRepository;
 
-        public UpdateLeaveTypeCommandValidator(ILeaveTypeRepository leavetypecRepository) 
+        public UpdateLeaveTypeCommandValidator(ILeaveTypeRepository leavetypecRepository)
         {
             RuleFor(p => p.Id)
                 .NotEmpty()

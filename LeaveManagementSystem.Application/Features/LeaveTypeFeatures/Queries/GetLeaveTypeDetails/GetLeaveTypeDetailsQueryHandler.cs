@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using LeaveManagementSystem.Application.Contracts.Persistance;
 using LeaveManagementSystem.Application.Exceptions;
-using LeaveManagementSystem.Application.Features.Queries.GetAllLeaveTypes;
 using LeaveManagementSytem.Domian;
 using MediatR;
 using System;
@@ -10,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeaveManagementSystem.Application.Features.Queries.GetLeaveTypeDetails
+namespace LeaveManagementSystem.Application.Features.LeaveTypeFeatures.Queries.GetLeaveTypeDetails
 {
     public class GetLeaveTypeDetailsQueryHandler : IRequestHandler<GetLeaveTypeDetailsQuery, LeaveTypeDetailsDto>
     {
@@ -30,7 +29,7 @@ namespace LeaveManagementSystem.Application.Features.Queries.GetLeaveTypeDetails
 
             //Verify if the record exists
             if (leaveType == null)
-                    throw new NotFoundException(nameof(LeaveType), request.Id);
+                throw new NotFoundException(nameof(LeaveType), request.Id);
 
             // Covert data objects to DTO objects
             var data = _mapper.Map<LeaveTypeDetailsDto>(leaveType);

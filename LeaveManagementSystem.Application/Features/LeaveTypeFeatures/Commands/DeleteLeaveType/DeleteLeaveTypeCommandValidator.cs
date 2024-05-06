@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeaveManagementSystem.Application.Features.Commands.DeleteLeaveType
+namespace LeaveManagementSystem.Application.Features.LeaveTypeFeatures.Commands.DeleteLeaveType
 {
     public class DeleteLeaveTypeCommandValidator : AbstractValidator<DeleteLeaveTypeCommand>
     {
-        public DeleteLeaveTypeCommandValidator() 
+        public DeleteLeaveTypeCommandValidator()
         {
             RuleFor(p => p.Id)
                 .NotEmpty().WithMessage("{PropertyNmae} the Id is reqired")

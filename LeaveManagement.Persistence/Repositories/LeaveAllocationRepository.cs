@@ -29,7 +29,7 @@ namespace LeaveManagement.Persistence.Repositories
             return leaveRequest;
         }
 
-        public async Task<List<LeaveRequest>> GetLeaveRequestWithDetails()
+        public async Task<List<LeaveRequest>> GetAllocationWithDetails()
         {
             var leaveRequest = await _dbcontext.LeaveRequests.Include(q => q.Leavetype)
                                                              .ToListAsync();

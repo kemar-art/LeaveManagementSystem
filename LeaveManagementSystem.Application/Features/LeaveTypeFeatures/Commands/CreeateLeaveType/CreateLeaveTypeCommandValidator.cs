@@ -1,4 +1,4 @@
-﻿ using FluentValidation;
+﻿using FluentValidation;
 using LeaveManagementSystem.Application.Contracts.Persistance;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeaveManagementSystem.Application.Features.Commands.CreeateLeaveType
+namespace LeaveManagementSystem.Application.Features.LeaveTypeFeatures.Commands.CreeateLeaveType
 {
     public class CreateLeaveTypeCommandValidator : AbstractValidator<CreateLeaveTypeCommand>
     {

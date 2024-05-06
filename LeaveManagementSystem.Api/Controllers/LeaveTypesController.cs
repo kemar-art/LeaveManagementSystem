@@ -1,11 +1,11 @@
-﻿using LeaveManagementSystem.Application.Features.Commands.CreeateLeaveType;
-using LeaveManagementSystem.Application.Features.Commands.DeleteLeaveType;
-using LeaveManagementSystem.Application.Features.Commands.UpdateLeaveType;
-using LeaveManagementSystem.Application.Features.Queries.GetAllLeaveTypes;
-using LeaveManagementSystem.Application.Features.Queries.GetLeaveTypeDetails;
+﻿using LeaveManagementSystem.Application.Features.LeaveTypeFeatures.Commands.DeleteLeaveType;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using LeaveManagementSystem.Application.Features.LeaveTypeFeatures.Queries.GetAllLeaveTypes;
+using LeaveManagementSystem.Application.Features.LeaveTypeFeatures.Queries.GetLeaveTypeDetails;
+using LeaveManagementSystem.Application.Features.LeaveTypeFeatures.Commands.CreeateLeaveType;
+using LeaveManagementSystem.Application.Features.LeaveTypeFeatures.Commands.UpdateLeaveType;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

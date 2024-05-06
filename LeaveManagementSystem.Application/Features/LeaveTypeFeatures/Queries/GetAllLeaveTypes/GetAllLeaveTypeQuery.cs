@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeaveManagementSystem.Application.Features.Queries.GetAllLeaveTypes
+namespace LeaveManagementSystem.Application.Features.LeaveTypeFeatures.Queries.GetAllLeaveTypes
 {
     //public class GetAllLeaveTypeQuery : IRequest<IEnumerable<LeavetypeDto>>
     //{

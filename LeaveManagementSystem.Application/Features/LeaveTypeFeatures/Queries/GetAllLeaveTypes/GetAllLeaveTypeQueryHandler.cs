@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeaveManagementSystem.Application.Features.Queries.GetAllLeaveTypes
+namespace LeaveManagementSystem.Application.Features.LeaveTypeFeatures.Queries.GetAllLeaveTypes
 {
     public class GetAllLeaveTypeQueryHandler : IRequestHandler<GetAllLeaveTypeQuery, IEnumerable<LeaveTypeDto>>
     {
@@ -32,7 +32,7 @@ namespace LeaveManagementSystem.Application.Features.Queries.GetAllLeaveTypes
             var leaveTypes = await _leavetypecRepository.GetAllAsync();
 
             // Covert data objects to DTO objects
-            var data = _mapper.Map< IEnumerable<LeaveTypeDto>>(leaveTypes);
+            var data = _mapper.Map<IEnumerable<LeaveTypeDto>>(leaveTypes);
 
             // retrun the list of DTO objects.
             _appLogger.LogInformation("Leave types were retrieved successfully");

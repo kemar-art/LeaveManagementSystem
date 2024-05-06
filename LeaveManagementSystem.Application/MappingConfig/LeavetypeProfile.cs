@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using LeaveManagementSystem.Application.Features.Commands.CreeateLeaveType;
-using LeaveManagementSystem.Application.Features.Commands.UpdateLeaveType;
-using LeaveManagementSystem.Application.Features.Queries.GetAllLeaveTypes;
-using LeaveManagementSystem.Application.Features.Queries.GetLeaveTypeDetails;
+using LeaveManagementSystem.Application.Features.LeaveTypeFeatures.Commands.CreeateLeaveType;
+using LeaveManagementSystem.Application.Features.LeaveTypeFeatures.Commands.UpdateLeaveType;
+using LeaveManagementSystem.Application.Features.LeaveTypeFeatures.Queries.GetAllLeaveTypes;
+using LeaveManagementSystem.Application.Features.LeaveTypeFeatures.Queries.GetLeaveTypeDetails;
 using LeaveManagementSytem.Domian;
 using System;
 using System.Collections.Generic;

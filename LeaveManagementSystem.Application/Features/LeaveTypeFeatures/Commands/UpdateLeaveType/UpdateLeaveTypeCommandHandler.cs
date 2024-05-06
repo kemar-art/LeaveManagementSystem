@@ -3,7 +3,8 @@ using FluentValidation;
 using LeaveManagementSystem.Application.Contracts.ILogging;
 using LeaveManagementSystem.Application.Contracts.Persistance;
 using LeaveManagementSystem.Application.Exceptions;
-using LeaveManagementSystem.Application.Features.Commands.CreeateLeaveType;
+using LeaveManagementSystem.Application.Features.LeaveTypeFeatures.Commands.CreeateLeaveType;
+using LeaveManagementSystem.Application.Features.LeaveTypeFeatures.Commands.UpdateLeaveType;
 using LeaveManagementSytem.Domian;
 using MediatR;
 using System;
@@ -12,7 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeaveManagementSystem.Application.Features.Commands.UpdateLeaveType
+namespace LeaveManagementSystem.Application.Features.LeaveTypeFeatures.Commands.UpdateLeaveType
 {
     public class UpdateLeaveTypeCommandHandler : IRequestHandler<UpdateLeaveTypeCommand, LeaveType>
     {

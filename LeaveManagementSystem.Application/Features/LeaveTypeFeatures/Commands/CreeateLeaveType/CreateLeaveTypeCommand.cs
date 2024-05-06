@@ -6,11 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeaveManagementSystem.Application.Features.Commands.UpdateLeaveType
+namespace LeaveManagementSystem.Application.Features.LeaveTypeFeatures.Commands.CreeateLeaveType
 {
-    public class UpdateLeaveTypeCommand : IRequest<LeaveType>
+    public class CreateLeaveTypeCommand : IRequest<LeaveType>
     {
-        public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public int DefaultDays { get; set; }
     }
