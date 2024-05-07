@@ -18,7 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\LeaveAllocationFeatures\Commands\DeleteLeaveType\" />
     <Folder Include="Features\LeaveRequestFeatures\Commands\CreeateLeaveType\" />
     <Folder Include="Features\LeaveRequestFeatures\Commands\DeleteLeaveType\" />
     <Folder Include="Features\LeaveRequestFeatures\Commands\UpdateLeaveType\" />
