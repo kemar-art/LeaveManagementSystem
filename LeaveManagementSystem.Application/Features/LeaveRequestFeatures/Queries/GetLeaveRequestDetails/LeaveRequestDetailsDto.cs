@@ -17,6 +17,6 @@ namespace LeaveManagementSystem.Application.Features.LeaveRequestFeatures.Querie
         public string RequestComments { get; set; }
         public DateTime DateActioned { get; set; }
         public bool? IsApproved { get; set; }
-        public bool IsCancelled { get; set; }
+        public bool? IsCancelled { get; set; }
     }
 }
