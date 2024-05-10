@@ -23,9 +23,6 @@ namespace LeaveManagementSystem.Application.Features.LeaveTypeFeatures.Queries.G
             _appLogger = appLogger;
         }
 
-
-
-
         public async Task<IEnumerable<LeaveTypeDto>> Handle(GetAllLeaveTypeQuery request, CancellationToken cancellationToken)
         {
             //Query the database
