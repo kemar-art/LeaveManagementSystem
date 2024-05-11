@@ -16,24 +16,35 @@ namespace LeaveManagementSystem.UI.Services
 
         public async Task<Response<Guid>> CreateLeaveType(LeaveTypeVM leaveType)
         {
-            //try
-            //{
-            //    var createLeaveTypeCommand = _mapper.Map<CreateLeaveTypeCommand>(leaveType);
-            //    await _client.LeaveTypesPOSTAsync(createLeaveTypeCommand);
+            try
+            {
+                var createLeaveTypeCommand = _mapper.Map<CreateLeaveTypeCommand>(leaveType);
+                await _client.LeaveTypesPOSTAsync(createLeaveTypeCommand);
+                return new Response<Guid>()
+                {
+                    IsSuccess = true,
+                };
+            }
+            catch (ApiException ex)
+            {
 
-            //}
-            //catch (Exception)
-            //{
+                return ConvertApiExceptions<Guid>(ex);
+            }
 
-            //    throw;
-            //}
-
-            throw new NotImplementedException();
         }
 
-        public Task<Response<Guid>> DeleteLeaveType(int id)
+        public async Task<Response<Guid>> DeleteLeaveType(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                await _client.LeaveTypesDELETEAsync(id);
+                return new Response<Guid>() { IsSuccess = true };
+            }
+            catch (ApiException ex)
+            {
+
+                return ConvertApiExceptions<Guid>(ex);
+            }
         }
 
         public async Task<IEnumerable<LeaveTypeVM>> GetAllLeaveTypes()
@@ -48,9 +59,22 @@ namespace LeaveManagementSystem.UI.Services
             return _mapper.Map<LeaveTypeVM>(leaveType);
         }
 
-        public Task<Response<Guid>> UpdateLeaveType(int id, LeaveTypeVM leaveType)
+        public async Task<Response<Guid>> UpdateLeaveType(int id, LeaveTypeVM leaveType)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var updateLeaveTypeCommand = _mapper.Map<UpdateLeaveTypeCommand>(leaveType);
+                await _client.LeaveTypesPUTAsync(id.ToString(), updateLeaveTypeCommand);
+                return new Response<Guid>()
+                {
+                    IsSuccess = true,
+                };
+            }
+            catch (ApiException ex)
+            {
+
+                return ConvertApiExceptions<Guid>(ex);
+            }
         }
     }
 }

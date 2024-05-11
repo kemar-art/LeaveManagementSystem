@@ -19,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\LeaveRequest\" />
     <Folder Include="Models\LeaveAllocation\" />
+    <Folder Include="Models\LeaveRequest\" />
   </ItemGroup>
 
 </Project>

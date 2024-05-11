@@ -8,8 +8,9 @@ namespace LeaveManagementSystem.UI.MappingConfig
     {
         public MappingProfles()
         {
-            CreateMap<LeaveTypeDto, LeaveTypeVM>();
-            CreateMap<CreateLeaveTypeCommand, LeaveTypeVM>();
+            CreateMap<LeaveTypeDto, LeaveTypeVM>().ReverseMap();
+            CreateMap<CreateLeaveTypeCommand, LeaveTypeVM>().ReverseMap();
+            CreateMap<UpdateLeaveTypeCommand, LeaveTypeVM>().ReverseMap();
         }
     }
 }
