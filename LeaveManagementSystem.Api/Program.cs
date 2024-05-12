@@ -2,6 +2,7 @@ using LeaveManagementSystem.Infrastructure;
 using LeaveManagementSystem.Application;
 using LeaveManagement.Persistence;
 using LeaveManagementSystem.Api.Middleware;
+using LeaveManagementSystem.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddApplicationServices();
 builder.Services.AddPresistenceServices(builder.Configuration);
 builder.Services.AddInfrastructureServices(builder.Configuration);
+builder.Services.AddIdentityServices(builder.Configuration);
 
 builder.Services.AddControllers();
 builder.Services.AddCors( options =>
@@ -34,6 +36,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseCors("all");
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

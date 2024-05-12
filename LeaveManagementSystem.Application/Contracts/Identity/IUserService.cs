@@ -5,6 +5,6 @@ namespace LeaveManagementSystem.Application.Contracts.Identity
     public interface IUserService
     {
         Task<IEnumerable<Employee>> GetEmployees();
-        Task<Employee> GetEmployeeById(string id);
+        Task<Employee> GetEmployeeById(string userId);
     }
 }
